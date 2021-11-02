@@ -1,0 +1,17 @@
+.quote__author {
+    margin-top: 150px;
+    padding: 0 251px;
+    &-name {
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 28px;
+        color: #4F4F4F;
+        margin-bottom: 8px;
+    }
+    &-tag {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 16px;
+        color: #828282;
+    }
+}

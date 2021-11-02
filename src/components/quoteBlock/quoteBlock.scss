@@ -1,0 +1,23 @@
+.quote__block {
+    display: flex;
+    align-items: center;
+    margin-top: 200px;
+    height: 320px;
+    padding: 0 10%;
+    position: relative;
+    &-divider {
+        width: 8px;
+        height: 301px;
+        background: #F7DF94;
+    }
+    &-quote {
+        font-weight: 500;
+        margin: 0 auto;
+        max-height: 500px;
+        font-size: 32px;
+        line-height: 120%;
+        color: #000000;
+        position: relative;
+        max-width: 60%;
+    }
+}
