@@ -1,8 +1,10 @@
 import { useState } from "react";
+import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
+import { useQuoteService } from '../../services/service';
+import QuotesList from "../quotesList/quotesList";
 import AppHeader from "../appHeader/appHeader";
 import QuoteBlock from "../quoteBlock/quoteBlock";
-import QuoteAuthor from "../quoteAuthor/quoteAuthor";
-import { useQuoteService } from '../../services/service';
+import Footer from '../footer/footer';
 const App = () => {
     const [quote, setQuote] = useState({});
     const [loading, setLoading] = useState(true);
@@ -17,18 +19,28 @@ const App = () => {
     }
 
     return (
-        <div className="app">
-            <AppHeader updateQuote={updateQuote}/>
-            <main>
-                <QuoteBlock 
-                    quote={quote}
-                    updateQuote={updateQuote}
-                    loading={loading}/>
-                <QuoteAuthor 
-                    loading={loading}
-                    quote={quote}/>
-            </main>
-        </div>
+        <Router>
+            <div className="app">
+                <AppHeader updateQuote={updateQuote}/>
+                <main>
+                    <Switch>
+                        <Route path="/" exact>
+                            <QuoteBlock 
+                                quote={quote}
+                                updateQuote={updateQuote}
+                                loading={loading}/>
+                        </Route>
+                        <Route path="/:slug" exact>
+                            <QuotesList
+                                loading={loading}
+                                setLoading={setLoading}
+                            />
+                        </Route>
+                    </Switch>
+                </main>
+                <Footer/>
+            </div>
+        </Router>
     );
 }
 

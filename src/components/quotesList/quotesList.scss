@@ -1,0 +1,21 @@
+.quotes__list {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+    row-gap: 140px;
+    &-item {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        .quote__block-divider {
+            margin-right: 100px;
+            height: 100%;
+        }
+        &-text {
+            max-width: 60%;
+            font-size: 32px;
+            line-height: 120%;
+            color: #000000; 
+        }
+    }
+}

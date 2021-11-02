@@ -9,6 +9,10 @@ export const useQuoteService = () => {
         const res = await request(`${_apiBase}random`);
         return _transformData(res);
     }
+    const getQuoteList = async (name) => {
+        const res = await request(`${_apiBase}quotes?author=${name}`);
+        return res.results.map(_transformData);    
+    }
     
     const _transformData = (quote) => {
         return {
@@ -20,5 +24,5 @@ export const useQuoteService = () => {
         }
     }
 
-    return {getRandomQuote}
+    return {getRandomQuote, getQuoteList}
 }

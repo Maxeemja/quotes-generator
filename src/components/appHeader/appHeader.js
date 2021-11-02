@@ -1,11 +1,14 @@
 import './appHeader.scss';
-
-const AppHeader = ({updateQuote}) => {
-
+import { Link, withRouter } from 'react-router-dom';
+const AppHeader = ({updateQuote, location}) => {
     return (
         <header>
-            <div className="rnd-btn" onClick={() => updateQuote()}>random<i className="fas fa-sync-alt"></i></div>
+            <Link to="/">
+                <div 
+                    className="rnd-btn" 
+                    onClick={location.pathname === '/' ? () => updateQuote() : null}>random<i className="fas fa-sync-alt"></i></div>
+            </Link>
         </header>
     )
 }
-export default AppHeader;
+export default withRouter(AppHeader);

@@ -1,23 +1,70 @@
 .quote__block {
-    display: flex;
+    display: grid;
+    grid-template-columns: 8px 1fr;
+    column-gap: 70px;
+    row-gap: 100px;
     align-items: center;
-    margin-top: 200px;
+    margin-top: 180px;
+    padding: 0 5%;
     height: 320px;
-    padding: 0 10%;
     position: relative;
     &-divider {
         width: 8px;
-        height: 301px;
+        height: 300px;
         background: #F7DF94;
     }
     &-quote {
+        margin-left: 30px;
+        max-width: 615px;
         font-weight: 500;
-        margin: 0 auto;
-        max-height: 500px;
         font-size: 32px;
         line-height: 120%;
-        color: #000000;
+        color: #000000; 
         position: relative;
-        max-width: 60%;
     }
+}
+.quote__author {
+    max-height: 151px;
+    position: relative;
+    padding: 50px 30px;
+    &-name {
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 28px;
+        color: #4F4F4F;
+        margin-bottom: 8px;
+        &.big {
+            font-size: 36px;
+            line-height: 42px;
+            margin-left: 108px;
+            margin-top: 50px;
+            margin-bottom: 120px;
+        }
+    }
+    &-tag {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 16px;
+        color: #828282;
+    }
+    &-arrow {
+        position: absolute;
+        color: #f2f2f2;
+        right: 34px;
+        display: none;
+        top: 67px;
+        i {
+            font-size: 24px;
+        }
+    }
+    &:hover {
+        cursor: pointer;
+        background-color: #333;
+        .quote__author-name {
+            color: #f2f2f2;
+        }
+        .quote__author-arrow {
+            display: block;
+        }
+    } 
 }

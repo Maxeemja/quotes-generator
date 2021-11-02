@@ -5,7 +5,13 @@
     font-family: 'Raleway', sans-serif;
 }
 .app {
-    width: 940px;
+    width: 840px;
     margin: 0 auto;
     margin-top: 40px;
+    a {
+        text-decoration: none;
+    }
+    main {
+        position: relative;
+    }
 }
