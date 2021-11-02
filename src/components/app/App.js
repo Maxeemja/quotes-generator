@@ -19,18 +19,18 @@ const App = () => {
     }
 
     return (
-        <Router>
+        <Router basename="/quotes-generator">
             <div className="app">
                 <AppHeader updateQuote={updateQuote}/>
                 <main>
                     <Switch>
-                        <Route path="/quotes-generator" exact>
+                        <Route path="/" exact>
                             <QuoteBlock 
                                 quote={quote}
                                 updateQuote={updateQuote}
                                 loading={loading}/>
                         </Route>
-                        <Route path="/quotes-generator/:slug">
+                        <Route path="/:slug">
                             <QuotesList
                                 loading={loading}
                                 setLoading={setLoading}

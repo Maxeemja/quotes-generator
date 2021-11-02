@@ -12,7 +12,7 @@ const QuoteBlock = ({quote, updateQuote, loading}) => {
             <div className="quote__block-divider"></div>
             {loading ? <Spinner/> : <div className="quote__block-quote">{`"${quote.content}"`}</div>}
             <div></div>
-            <Link to={`/quotes-generator/${quote.slug}`}>
+            <Link to={`/${quote.slug}`}>
                 <div className="quote__author" hidden={loading}>
                     <div className="quote__author-name">{quote.author}</div>
                     <span className="quote__author-arrow"><i className="fas fa-long-arrow-alt-right"></i></span>

@@ -3,10 +3,10 @@ import { Link, withRouter } from 'react-router-dom';
 const AppHeader = ({updateQuote, location}) => {
     return (
         <header>
-            <Link to="/quotes-generator">
+            <Link to="/">
                 <div 
                     className="rnd-btn" 
-                    onClick={location.pathname === '/quotes-generator' ? () => updateQuote() : null}>random<i className="fas fa-sync-alt"></i></div>
+                    onClick={location.pathname === '/' ? () => updateQuote() : null}>random<i className="fas fa-sync-alt"></i></div>
             </Link>
         </header>
     )
