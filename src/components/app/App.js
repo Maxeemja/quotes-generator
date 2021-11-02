@@ -24,13 +24,13 @@ const App = () => {
                 <AppHeader updateQuote={updateQuote}/>
                 <main>
                     <Switch>
-                        <Route path="/" exact>
+                        <Route path="/quotes-generator" exact>
                             <QuoteBlock 
                                 quote={quote}
                                 updateQuote={updateQuote}
                                 loading={loading}/>
                         </Route>
-                        <Route path="/:slug" exact>
+                        <Route path="/quotes-generator/:slug">
                             <QuotesList
                                 loading={loading}
                                 setLoading={setLoading}

@@ -18,10 +18,9 @@ const QuotesList = ({loading, setLoading}) => {
     const onListLoaded = (data) => {
         setLoading(false);
         setQuotes(data);
-        if(data[0].author){
+        if(data[0].author !== undefined){
             setName(data[0].author);
         }
-
     }
 
     const renderItems = (arr) => {
