@@ -19,7 +19,7 @@ const App = () => {
     }
 
     return (
-        <Router basename="/quotes-generator">
+        <Router  basename={process.env.PUBLIC_URL}>
             <div className="app">
                 <AppHeader updateQuote={updateQuote}/>
                 <main>
