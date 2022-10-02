@@ -1,5 +1,5 @@
 import { useState } from "react";
-import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
+import { HashRouter as Router, Route, Switch} from "react-router-dom";
 import { useQuoteService } from '../../services/service';
 import QuotesList from "../quotesList/quotesList";
 import AppHeader from "../appHeader/appHeader";
@@ -19,7 +19,7 @@ const App = () => {
     }
 
     return (
-        <Router  basename={process.env.PUBLIC_URL}>
+        <Router  basename="/quotes-generator">
             <div className="app">
                 <AppHeader updateQuote={updateQuote}/>
                 <main>
